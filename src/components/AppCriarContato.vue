@@ -7,22 +7,50 @@
                         <h2 class="text-white py-2">Criar Contato</h2>
                     </div>
                 </div>
-                <form class="p-4" >
+                <form class="p-4">
                     <div class="border p-3 mb-3">
                         <div class="form-group col-md-12">
                             <label for="nome">Nome: </label>
-                            <input type="text" class="form-control my-2" v-model="nome" name="nome" id="nome" minlength="3" maxlength="50" placeholder="Nome Completo" />
+                            <input
+                                type="text"
+                                class="form-control my-2"
+                                v-model="nome"
+                                name="nome"
+                                id="nome"
+                                minlength="3"
+                                maxlength="50"
+                                placeholder="Nome Completo"
+                            />
                         </div>
                         <div class="form-group col-md-12">
                             <label for="email">Email: </label>
-                            <input type="email" class="form-control my-2" v-model="email" name="email" id="email" placeholder="email@email.com" />
+                            <input
+                                type="email"
+                                class="form-control my-2"
+                                v-model="email"
+                                name="email"
+                                id="email"
+                                placeholder="email@email.com"
+                            />
                         </div>
                         <div class="form-group col-md-12">
                             <label for="telefone">Telefone: </label>
-                            <input type="text" class="form-control my-2" v-model="telefone" name="telefone" id="telefone" placeholder="Telefone" @input="validarTelefoneInput"/>
+                            <input
+                                type="text"
+                                class="form-control my-2"
+                                v-model="telefone"
+                                name="telefone"
+                                id="telefone"
+                                placeholder="Telefone"
+                                @input="validarTelefoneInput"
+                            />
                         </div>
                     </div>
-                    <button type="button" @click="formatarDadosContato()" class="btn btn-success mt-3 py-2">
+                    <button
+                        type="button"
+                        @click="formatarDadosContato()"
+                        class="btn btn-success mt-3 py-2"
+                    >
                         Salvar na Agenda
                     </button>
                 </form>
@@ -32,17 +60,17 @@
 </template>
 
 <script>
-import { criarContato } from '../services/AgendaServices'
-import { validarTelefone } from '../validations/validations.js';
+import { criarContato } from "../services/AgendaServices";
+import { validarTelefone } from "../validations/validations.js";
 
 export default {
-    name: 'AppCriarContato',
+    name: "AppCriarContato",
     data() {
         return {
-            nome: '',
-            email: '',
-            telefone: '',
-        }
+            nome: "",
+            email: "",
+            telefone: "",
+        };
     },
     methods: {
         validarTelefoneInput() {
@@ -54,12 +82,12 @@ export default {
                 nome: this.nome,
                 email: this.email,
                 telefone: this.telefone,
-            }
-            criarContato(dadosContato).then(res => {
-                console.log('res:::', res);
+            };
+            criarContato(dadosContato).then((res) => {
+                console.log("res:::", res);
                 this.$router.push({ name: "home" });
             });
         },
-    }
-}
+    },
+};
 </script>

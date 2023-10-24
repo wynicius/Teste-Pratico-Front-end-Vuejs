@@ -32,40 +32,38 @@
         </div>
     </div>
 </template>
-  
+
 <script>
-    import { listarContato, excluirContato } from '../services/AgendaServices'
+import { listarContato, excluirContato } from '../services/AgendaServices'
 
-
-    export default {
-        name: 'AppExcluirContato',
-        props: ['contato'],
-        data() {
-            return {
-                nome: '',
-                email: '',
-                telefone: ''
-            }
+export default {
+    name: 'AppExcluirContato',
+    props: ['contato'],
+    data() {
+        return {
+            nome: '',
+            email: '',
+            telefone: ''
+        }
+    },
+    mounted() {
+        this.obterDadosContato(this.$route.params.id)
+    },
+    methods: {
+        obterDadosContato(id) {
+            listarContato(id).then(res => {
+                this.id = res.id;
+                this.nome = res.nome;
+                this.email = res.email;
+                this.telefone = res.telefone;
+            })
         },
-        mounted() {
-            this.obterDadosContato(this.$route.params.id)
-            
-        },
-        methods: {
-            obterDadosContato(id) {
-                listarContato(id).then(res => {
-                    this.id = res.id;
-                    this.nome = res.nome;
-                    this.email = res.email;
-                    this.telefone = res.telefone;
-                })
-            },
-            excluirDadosContato() {
-                excluirContato(this.$route.params.id).then(res => {
-                    console.log('res:::', res);
-                    this.$router.push({ name: "home" });
-                });
-            }
+        excluirDadosContato() {
+            excluirContato(this.$route.params.id).then(res => {
+                console.log('res:::', res);
+                this.$router.push({ name: "home" });
+            });
         }
     }
+}
 </script>

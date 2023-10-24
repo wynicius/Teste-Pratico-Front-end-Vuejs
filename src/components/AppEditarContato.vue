@@ -25,53 +25,52 @@
                         </div>
                     </div>
                     <button type="button" @click="atualizarDadosContato()" class="btn btn-warning py-2">
-                    Salvar Alterações
+                        Salvar Alterações
                     </button>
                 </form>
             </div>
         </div>
     </div>
 </template>
-  
+
 <script>
-    import { listarContato, editarContato } from '../services/AgendaServices'
+import { listarContato, editarContato } from '../services/AgendaServices'
 
-    export default {
-        name: 'AppEditarContato',
+export default {
+    name: 'AppEditarContato',
 
-        props: ['contato'],
-        data() {
-            return {
-                nome: '',
-                email: '',
-                telefone: ''
-            }
+    props: ['contato'],
+    data() {
+        return {
+            nome: '',
+            email: '',
+            telefone: ''
+        }
+    },
+    mounted() {
+        this.obterDadosContato(this.$route.params.id)
+    },
+    methods: {
+        obterDadosContato(id) {
+            listarContato(id).then(res => {
+                this.id = res.id;
+                this.nome = res.nome;
+                this.email = res.email;
+                this.telefone = res.telefone;
+            })
         },
-        mounted() {
-            this.obterDadosContato(this.$route.params.id)
-            
-        },
-        methods: {
-            obterDadosContato(id) {
-                listarContato(id).then(res => {
-                    this.id = res.id;
-                    this.nome = res.nome;
-                    this.email = res.email;
-                    this.telefone = res.telefone;
-                })
-            },
-            atualizarDadosContato() {
-                const dadosContato = {
-                    id: this.id,
-                    nome: this.nome,
-                    email: this.email,
-                    telefone: this.telefone
-                }
-                editarContato(dadosContato).then(res => {
-                    console.log('res:::', res);
-                    this.$router.push({ name: "home" });
-                });
+        atualizarDadosContato() {
+            const dadosContato = {
+                id: this.id,
+                nome: this.nome,
+                email: this.email,
+                telefone: this.telefone
             }
+            editarContato(dadosContato).then(res => {
+                console.log('res:::', res);
+                this.$router.push({ name: "home" });
+            });
         }
     }
+}
 </script>
