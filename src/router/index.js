@@ -1,11 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import AppEditarContato from "../components/AppEditarContato.vue";
+import AppExcluirContato from "../components/AppExcluirContato.vue";
+import AppDashboard from '../components/AppDashboard.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: AppDashboard
+  },
+  {
+    path: "/editarContato/:id",
+    name: "editarContato",
+    component: AppEditarContato,
+  },
+  {
+    path: "/excluirContato/:id",
+    name: "excluirContato",
+    component: AppExcluirContato,
   },
   {
     path: '/about',

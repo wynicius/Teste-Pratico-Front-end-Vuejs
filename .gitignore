@@ -9,6 +9,7 @@ node_modules
 
 # Log files
 npm-debug.log*
+api-logs.txt*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
