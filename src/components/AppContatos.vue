@@ -9,7 +9,7 @@
         </div>
         <div class="d-flex justify-content-center p-3">
           <div type="button" speechify-initial-font-size="13px">
-            <router-link :to="'/criarContato/'" class="btn btn-outline-success">
+            <router-link :to="'/criarContato/'" class="btn btn-success">
               Criar novo contato
             </router-link>
           </div>
