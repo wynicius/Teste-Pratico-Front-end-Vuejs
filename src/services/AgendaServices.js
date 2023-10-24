@@ -11,8 +11,16 @@ export async function listarContato(id) {
 }
 
 export async function criarContato(contato) {
-  const response = await axios.post('/api/criar', contato);
-  return response.data;
+  try {
+    const response = await axios.post('/api/criar', contato);
+    return response.data;
+  } catch (error) {
+    if (error.response && error.response.status === 400) {
+      throw new Error('Erro ao criar contato: Verifique os dados do contato novamente.');
+    } else {
+      throw error;
+    }
+  }
 }
 
 export async function editarContato(contato) {

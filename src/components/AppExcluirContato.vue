@@ -2,30 +2,28 @@
     <div class="excluir">
         <AppHeader />
         <div class="d-flex flex-column align-items-center" style="height: 100vh;">
-            <div class="container shadow border-0 mt-4">
+            <div class="container shadow border-0 mt-4 px-0">
                 <div class="card-header bg-primary bg-gradient ml-0 py-3">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <h2 class="text-white py-2">Excluir Contato</h2>
-                        </div>
+                    <div class="col-12 text-center">
+                        <h2 class="text-white py-2">Excluir Contato</h2>
                     </div>
                 </div>
-                <form class="row p-4">
-                    <div class="border p-3">
+                <form class="p-4">
+                    <div class="border p-3 mb-3">
                         <div class="form-group col-md-12">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" v-model="nome" name="nome" id="nome" placeholder="Nome Completo" disabled/>
+                            <label for="nome">Nome: </label>
+                            <input type="text" class="form-control my-2" v-model="nome" name="nome" id="nome" placeholder="Nome Completo" disabled/>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" v-model="email" name="email" id="email" placeholder="E-mail" disabled/>
+                            <label for="email">Email: </label>
+                            <input type="email" class="form-control my-2" v-model="email" name="email" id="email" placeholder="E-mail" disabled/>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" class="form-control" v-model="telefone" name="telefone" id="telefone" placeholder="Telefone" disabled/>
+                            <label for="telefone">Telefone: </label>
+                            <input type="tel" class="form-control my-2" v-model="telefone" name="telefone" id="telefone" placeholder="Telefone" disabled/>
                         </div>
                     </div>
-                    <button type="button" @click="excluirDadosContato()" class="btn btn-danger">
+                    <button type="button" @click="excluirDadosContato()" class="btn btn-danger py-2">
                         Excluir Contato
                     </button>
                 </form>
@@ -37,16 +35,11 @@
   
 <script>
     import { listarContato, excluirContato } from '../services/AgendaServices'
-    import AppFooter from './AppFooter.vue'
-    import AppHeader from './AppHeader.vue'
+
 
     export default {
         name: 'AppExcluirContato',
         props: ['contato'],
-        components: {
-            AppFooter,
-            AppHeader
-        },
         data() {
             return {
                 nome: '',

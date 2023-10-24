@@ -1,51 +1,44 @@
 <template>
     <div>
-        <AppHeader />
-        <div class="d-flex flex-column align-items-center" style="height: 100vh;">
-            <div class="container shadow border-0 mt-4">
+        <div class="d-flex flex-column align-items-center" style="">
+            <div class="container shadow border-0 mt-4 px-0">
                 <div class="card-header bg-primary bg-gradient ml-0 py-3">
-                    <div class="row">
+                    <div class="text-center">
                         <div class="col-12 text-center">
                             <h2 class="text-white py-2">Editar Contato</h2>
                         </div>
                     </div>
                 </div>
-                <form class="row p-4">
-                    <div class="border p-3">
+                <form class="p-4">
+                    <div class="border p-3 mb-3">
                         <div class="form-group col-md-12">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" v-model="nome" name="nome" id="nome" placeholder="Nome Completo" />
+                            <label for="nome">Nome: </label>
+                            <input type="text" class="form-control my-2" v-model="nome" name="nome" id="nome" placeholder="Nome Completo" />
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" v-model="email" name="email" id="email" placeholder="E-mail" />
+                            <label for="email">Email: </label>
+                            <input type="email" class="form-control my-2" v-model="email" name="email" id="email" placeholder="E-mail" />
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" class="form-control" v-model="telefone" name="telefone" id="telefone" placeholder="Telefone" />
+                            <label for="telefone">Telefone: </label>
+                            <input type="tel" class="form-control my-2" v-model="telefone" name="telefone" id="telefone" placeholder="Telefone" />
                         </div>
                     </div>
-                    <button type="button" @click="atualizarDadosContato()" class="btn btn-warning">
+                    <button type="button" @click="atualizarDadosContato()" class="btn btn-warning py-2">
                     Salvar Alterações
                     </button>
                 </form>
             </div>
-            <AppFooter class="fixed-bottom" />
         </div>
     </div>
 </template>
   
 <script>
     import { listarContato, editarContato } from '../services/AgendaServices'
-    import AppFooter from './AppFooter.vue'
-    import AppHeader from './AppHeader.vue'
 
     export default {
         name: 'AppEditarContato',
-        components: {
-            AppFooter,
-            AppHeader
-        },
+
         props: ['contato'],
         data() {
             return {

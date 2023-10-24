@@ -5,7 +5,9 @@
             {{numeroDeContatos}}
         </div>
         <div class="btn">
-            <button @click='getTodosContatos()' type="button" class="btn btn-warning">Ver lista de contatos</button>
+            <button @click='getTodosContatos()' type="button" class="btn btn-success">
+                Ver lista de contatos
+            </button>
         </div>
     </div>
 </template>
