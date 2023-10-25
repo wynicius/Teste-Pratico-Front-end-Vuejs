@@ -36,7 +36,7 @@ $ npm run serve
 ```
 
 
-### Para utilização das mesmas classes bootstrap que utilizei, **faça o download do arquivo **bootstrap.min.css, do tema Sandstone em [Bootswatch(link)](https://bootswatch.com/)**, e copie e cole o conteúdo do arquivo no lugar das classes do arquivo bootstrap.min.css na pasta bootstrap\dist\css\bootstrap.min.css.
+### Para utilização das mesmas classes bootstrap que utilizei, faça o download do arquivo **bootstrap.min.css, do tema Sandstone em [Bootswatch(link)](https://bootswatch.com/)**. Copie e cole o conteúdo no lugar das classes do arquivo bootstrap.min.css na pasta bootstrap\dist\css\bootstrap.min.css.
 
 
 # Rodando a aplicação:
@@ -75,7 +75,7 @@ Abra o navegador e acesse a aplicação em http://localhost:8080.
 Clique no botão "Excluir" ao lado do contato que deseja excluir.
 Clique no botão "Confirmar".
 
-# [Conheça o Front-end do projeto clicando aqui](https://github.com/wynicius/Teste-Pratico-Back-end-DotNet)
+# [Conheça o Back-end do projeto clicando aqui](https://github.com/wynicius/Teste-Pratico-Back-end-DotNet)
 
 # Autor:
 
