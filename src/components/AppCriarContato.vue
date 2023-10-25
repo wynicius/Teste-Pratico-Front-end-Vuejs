@@ -10,7 +10,7 @@
                 <form class="p-4">
                     <div class="border p-3 mb-3">
                         <div class="form-group col-md-12">
-                            <label class="required">Nome: </label>
+                            <label>Nome: </label>
                             <input
                                 type="text"
                                 class="form-control my-2"
@@ -23,7 +23,7 @@
                             />
                         </div>
                         <div class="form-group col-md-12">
-                            <label >Email: </label>
+                            <label>Email: </label>
                             <input
                                 type="email"
                                 class="form-control my-2"
@@ -34,7 +34,7 @@
                             />
                         </div>
                         <div class="form-group col-md-12">
-                            <label >Telefone: </label>
+                            <label>Telefone: </label>
                             <input
                                 type="text"
                                 class="form-control my-2"
@@ -62,7 +62,6 @@
 <script>
 import { criarContato } from "../services/AgendaServices";
 import { validarTelefone } from "../validations/validations.js";
-import { required } from "vuelidate/lib/validators";
 
 export default {
     name: "AppCriarContato",
@@ -72,11 +71,6 @@ export default {
             email: "",
             telefone: "",
         };
-    },
-    validations: {
-        nome: { required },
-        email: { required },
-        telefone: { required },
     },
     methods: {
         validarTelefoneInput() {
