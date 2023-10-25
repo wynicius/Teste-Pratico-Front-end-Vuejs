@@ -10,7 +10,7 @@
                 <form class="p-4">
                     <div class="border p-3 mb-3">
                         <div class="form-group col-md-12">
-                            <label for="nome">Nome: </label>
+                            <label class="required">Nome: </label>
                             <input
                                 type="text"
                                 class="form-control my-2"
@@ -23,7 +23,7 @@
                             />
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="email">Email: </label>
+                            <label >Email: </label>
                             <input
                                 type="email"
                                 class="form-control my-2"
@@ -34,7 +34,7 @@
                             />
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="telefone">Telefone: </label>
+                            <label >Telefone: </label>
                             <input
                                 type="text"
                                 class="form-control my-2"
@@ -49,7 +49,7 @@
                     <button
                         type="button"
                         @click="formatarDadosContato()"
-                        class="btn btn-success mt-3 py-2"
+                        class="btn btn-success py-2"
                     >
                         Salvar na Agenda
                     </button>
@@ -62,6 +62,7 @@
 <script>
 import { criarContato } from "../services/AgendaServices";
 import { validarTelefone } from "../validations/validations.js";
+import { required } from "vuelidate/lib/validators";
 
 export default {
     name: "AppCriarContato",
@@ -71,6 +72,11 @@ export default {
             email: "",
             telefone: "",
         };
+    },
+    validations: {
+        nome: { required },
+        email: { required },
+        telefone: { required },
     },
     methods: {
         validarTelefoneInput() {
