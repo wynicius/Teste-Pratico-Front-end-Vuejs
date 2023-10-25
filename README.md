@@ -16,11 +16,11 @@
  - [Npm.js]
  - [Bootstrap]
 
+
 # Clonando o repositório
 
-
 ```sh
-# clonar este repositório
+# clone este repositório
 $ git clone https://github.com/wynicius/Teste-Pratico-Front-end-Vuejs
 
 # Abra o prompt de comando e navegue até a pasta:
@@ -29,9 +29,15 @@ $ cd front-vue
 # instale as dependências:
 $ npm install --only=dependencies
 
+# reponha as classe bootstrap.min.css
+
 # digite esse comando:
 $ npm run serve
 ```
+
+
+### Para utilização das mesmas classes bootstrap que utilizei, **faça o download do arquivo **bootstrap.min.css, do tema Sandstone em [Bootswatch(link)](https://bootswatch.com/)**, e copie e cole o conteúdo do arquivo no lugar das classes do arquivo bootstrap.min.css na pasta bootstrap\dist\css\bootstrap.min.css.
+
 
 # Rodando a aplicação:
 
