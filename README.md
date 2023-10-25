@@ -41,7 +41,7 @@ $ npm run serve
 
 # Rodando a aplicação:
 
-### abra o navegador e acesse a aplicação na porta 8080
+### Abra o navegador e acesse a aplicação na porta 8080
 
 ## Funcionalidades
 
