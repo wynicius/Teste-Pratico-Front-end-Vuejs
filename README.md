@@ -46,10 +46,10 @@ $ npm run serve
 ## Funcionalidades
 
 ### O projeto possui os seguintes recursos:
-- Listagem de contato (automática na Home)
-- Cadastro de contato
-- Edição de contato
-- Exclusão de contato
+ - Listagem de contato (automática na Home)
+ - Cadastro de contato
+ - Edição de contato
+ - Exclusão de contato
 
 ## Exemplos de Uso
 
@@ -58,28 +58,25 @@ $ npm run serve
 
 ### Para cadastrar um contato, execute os seguintes passos:
 
-- Abra o navegador e acesse a aplicação em http://localhost:8080.
-- Clique no botão "Cadastrar novo contato".
-- Preencha os campos "Nome", "Email" e "Telefone".
-- Clique no botão "Salvar".
-
+ - Abra o navegador e acesse a aplicação em http://localhost:8080.
+ - Clique no botão "Cadastrar novo contato".
+ - Preencha os campos "Nome", "Email" e "Telefone".
+ - Clique no botão "Salvar".
 ![CriarContato](https://raw.githubusercontent.com/wynicius/pictures/main/Criar%20Contato.jpg)
 
 ### Para editar um contato, execute os seguintes passos:
 
-- Abra o navegador e acesse a aplicação em http://localhost:8080.
-- Clique no botão "Editar" ao lado do contato que deseja editar.
-- Faça as alterações necessárias nos campos "Nome", "Email" e "Telefone".
-- Clique no botão "Salvar".
-
+ - Abra o navegador e acesse a aplicação em http://localhost:8080.
+ - Clique no botão "Editar" ao lado do contato que deseja editar.
+ - Faça as alterações necessárias nos campos "Nome", "Email" e "Telefone".
+ - Clique no botão "Salvar".
 ![editarContato](https://github.com/wynicius/pictures/blob/main/Editar%20Contato.jpg)
 
 ### Para excluir um contato, execute os seguintes passos:
 
-- Abra o navegador e acesse a aplicação em http://localhost:8080.
-- Clique no botão "Excluir" ao lado do contato que deseja excluir.
-- Clique no botão "Confirmar".
-
+Abra o navegador e acesse a aplicação em http://localhost:8080.
+Clique no botão "Excluir" ao lado do contato que deseja excluir.
+Clique no botão "Confirmar".
 ![excluirContato](https://raw.githubusercontent.com/wynicius/pictures/main/Excluir%20Contato.jpg)
 
 # [Conheça o Back-end do projeto clicando aqui](https://github.com/wynicius/Teste-Pratico-Back-end-DotNet)
