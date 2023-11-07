@@ -47,21 +47,18 @@
                                     @input="validarTelefoneInput"
                                 />
                             </div>
-                            <div v-if="isAuthenticated && role === 'administrador'" class="form-group col-lg-6 mb-3">
+                            <div  class="form-group col-lg-6 mb-3">
                                 <label>Tipo de usuário: </label>
                                 <select v-model="role" class="form-select my-2">
-                                    <option value="administrador">Administrador</option>
+                                    <option 
+                                    v-if="isAuthenticated && role === 'administrador'" 
+                                    value="administrador">
+                                        Administrador
+                                    </option>
                                     <option value="usuario">Usuário</option>
                                 </select>
                             </div>
-                            <div v-else class="form-group col-lg-6 mb-3">
-                                <div v-if="!isAuthenticated">
-                                    <label>Tipo de usuário:</label>
-                                    <select v-model="role" class="form-select my-2">
-                                        <option value="usuario">Usuário</option>
-                                    </select>
-                                </div>
-                            </div>
+        
                             <div class="form-group col-lg-6 mb-3">
                                 <label>Senha: </label>
                                 <input

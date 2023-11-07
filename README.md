@@ -65,9 +65,8 @@ $ npm run serve
 ## Cadastro de Usuários
 ![cadastroUsuarios](https://raw.githubusercontent.com/wynicius/pictures/main/cadastroUsuario.jpg)
 
-## Com o usuário logado você conseguirá visualizar a agenda de contatos, sendo direcionado à dashboard
+## Com o usuário logado você conseguirá visualizar a agenda de contatos, sendo direcionado à dashboard:
 
-### Para listar todos os contato basta abrir a aplicação em http://localhost:8080.
 ![Home](https://raw.githubusercontent.com/wynicius/pictures/main/Dashboard.jpg)
 
 ### Para cadastrar um contato, execute os seguintes passos:
