@@ -55,12 +55,13 @@
                                 </select>
                             </div>
                             <div v-else class="form-group col-lg-6 mb-3">
-                                <div v-if="!isAuthenticated && role === 'usuario'">
+                                <div v-if="!isAuthenticated">
                                     <label>Tipo de usuário:</label>
-                                    <input v-model="role" class="form-select my-2" disabled />
+                                    <select v-model="role" class="form-select my-2">
+                                        <option value="usuario">Usuário</option>
+                                    </select>
                                 </div>
                             </div>
-
                             <div class="form-group col-lg-6 mb-3">
                                 <label>Senha: </label>
                                 <input
@@ -119,7 +120,7 @@ export default {
             senha: "",
             confirmarSenha: "",
             telefone: "",
-            role: 'usuario'
+            role: localStorage.getItem('role')
         };
     },
     computed: {
