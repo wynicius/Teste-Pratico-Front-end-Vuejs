@@ -84,15 +84,13 @@ const routes = [
     path: "/cadastro",
     name: "cadastro",
     component: AppCadastro,
-    beforeEnter: (to, from, next) => {
-      const isAuthenticated = !!localStorage.getItem('jwt');
-      const role = localStorage.getItem('role');
-
-      if (isAuthenticated && role != "usuario") {
-        next();
-      } else {
-        next('/entrar');
-      }
+      beforeEnter: (to, from, next) => {
+        const isAuthenticated = !!localStorage.getItem('jwt');
+        if (isAuthenticated) {
+          next();
+        } else {
+          next('/entrar');
+        }
     },
   },
   {
