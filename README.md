@@ -46,12 +46,24 @@ $ npm run serve
 ## Funcionalidades
 
 ### O projeto possui os seguintes recursos:
- - Listagem de contato (automática na Home)
+
+ - Autorização e Autenticação
+ - Criação de Usuario
+ - Listagem de Usuário por E-mail
+ - Exclusão de Usuário
+
+ - Listagem de contato (automática na Dashboard)
  - Cadastro de contato
  - Edição de contato
  - Exclusão de contato
 
 ## Exemplos de Uso
+
+## Login
+![Home](https://raw.githubusercontent.com/wynicius/pictures/main/Home.jpg)
+
+## Cadastro de Usuários
+![cadastroUsuarios](https://raw.githubusercontent.com/wynicius/pictures/main/cadastroUsuario.jpg)
 
 ### Para listar todos os contato basta abrir a aplicação em http://localhost:8080.
 ![Home](https://raw.githubusercontent.com/wynicius/pictures/main/Home.jpg)
