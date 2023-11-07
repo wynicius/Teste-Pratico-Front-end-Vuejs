@@ -56,11 +56,10 @@
                             </div>
                             <div v-else class="form-group col-lg-6 mb-3">
                                 <label v-if="isAuthenticated && role === 'administrador'">
-                                    Tipo de usuário:
+                                        Tipo de usuário:
                                 </label>
-                                <div 
-                                    v-if="isAuthenticated && role === 'administrador'" class="form-group col-lg-6 mb-3">
-                                    <label v-if="isAuthenticated && role === 'administrador'">
+                                <div v-if="!isAuthenticated">
+                                    <label v-if="!isAuthenticated">
                                         Tipo de usuário: 
                                     </label>
                                     <select v-model="role" class="form-select my-2" value="usuario">
