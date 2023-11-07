@@ -16,7 +16,7 @@ const routes = [
     path: '/dashboard',
     name: 'dashboard',
     component: AppDashboard,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (next) => {
       // Verifique a existência do token JWT para determinar se o usuário está autenticado
       const isAuthenticated = !!localStorage.getItem('jwt');
 
@@ -33,7 +33,7 @@ const routes = [
     path: "/editarContato/:id",
     name: "editarContato",
     component: AppEditarContato,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (next) => {
       // Verifique a existência do token JWT para determinar se o usuário está autenticado
       const isAuthenticated = !!localStorage.getItem('jwt');
 
@@ -50,7 +50,7 @@ const routes = [
     path: "/excluirContato/:id",
     name: "excluirContato",
     component: AppExcluirContato,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (next) => {
       // Verifique a existência do token JWT para determinar se o usuário está autenticado
       const isAuthenticated = !!localStorage.getItem('jwt');
 
@@ -67,15 +67,12 @@ const routes = [
     path: "/criarContato",
     name: "criarContato",
     component: AppCriarContato,
-    beforeEnter: (to, from, next) => {
-      // Verifique a existência do token JWT para determinar se o usuário está autenticado
+    beforeEnter: (next) => {
       const isAuthenticated = !!localStorage.getItem('jwt');
 
       if (isAuthenticated) {
-        // Se o usuário estiver autenticado, permita o acesso à rota
         next();
       } else {
-        // Se o usuário não estiver autenticado, redirecione para a página de login
         next('/entrar');
       }
     },
@@ -84,7 +81,7 @@ const routes = [
     path: "/cadastro",
     name: "cadastro",
     component: AppCadastro,
-      beforeEnter: (to, from, next) => {
+      beforeEnter: (next) => {
         const isAuthenticated = !!localStorage.getItem('jwt');
         if (isAuthenticated) {
           next();
