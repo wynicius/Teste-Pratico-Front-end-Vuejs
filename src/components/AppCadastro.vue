@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <form class="p-4">
-                    <div class="border p-3 mb-3">
+                    <div class="border p-3 pb-0 mb-2">
                         <div class="row">
                             <div class="form-group col-lg-6 mb-3">
                                 <label>Nome: </label>
@@ -21,7 +21,7 @@
                                     id="nome"
                                     minlength="3"
                                     maxlength="50"
-                                    placeholder="Nome Completo"
+                                    placeholder="nome de usuário"
                                 />
                             </div>
                             <div class="form-group col-lg-6 mb-3">
@@ -43,16 +43,30 @@
                                     v-model="telefone"
                                     name="telefone"
                                     id="telefone"
-                                    placeholder="Telefone"
+                                    placeholder="telefone"
                                     @input="validarTelefoneInput"
                                 />
                             </div>
-                            <div class="form-group col-lg-6 mb-3">
+                            <div v-if="isAuthenticated && role === 'administrador'" class="form-group col-lg-6 mb-3">
                                 <label>Tipo de usuário: </label>
                                 <select v-model="role" class="form-select my-2">
                                     <option value="administrador">Administrador</option>
                                     <option value="usuario">Usuário</option>
                                 </select>
+                            </div>
+                            <div v-else class="form-group col-lg-6 mb-3">
+                                <label v-if="isAuthenticated && role === 'administrador'">
+                                    Tipo de usuário:
+                                </label>
+                                <div 
+                                    v-if="isAuthenticated && role === 'administrador'" class="form-group col-lg-6 mb-3">
+                                    <label v-if="isAuthenticated && role === 'administrador'">
+                                        Tipo de usuário: 
+                                    </label>
+                                    <select v-model="role" class="form-select my-2" value="usuario">
+                                        <option>Usuário</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group col-lg-6 mb-3">
                                 <label>Senha: </label>
@@ -64,7 +78,7 @@
                                     id="senha"
                                     minlength="6"
                                     maxlength="20"
-                                    placeholder="Senha"
+                                    placeholder="senha"
                                 />
                             </div>
                             <div class="form-group col-lg-6 mb-3">
@@ -77,7 +91,7 @@
                                     id="confirmarSenha"
                                     minlength="6"
                                     maxlength="20"
-                                    placeholder="Confirmar Senha"
+                                    placeholder="confirmar senha"
                                 />
                             </div>
                         </div>
@@ -113,8 +127,13 @@ export default {
             senha: "",
             confirmarSenha: "",
             telefone: "",
-            role: "",
+            role: localStorage.getItem('role')
         };
+    },
+    computed: {
+      isAuthenticated() {
+        return !!localStorage.getItem('jwt');
+      },
     },
     methods: {
         validarTelefoneInput() {

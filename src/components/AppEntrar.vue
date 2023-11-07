@@ -31,7 +31,7 @@
                                 id="senha"
                                 minlength="6"
                                 maxlength="20"
-                                placeholder="Senha"
+                                placeholder="senha"
                             />
                         </div>
                     </div>

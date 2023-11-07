@@ -1,0 +1,13 @@
+:root {
+    --primary-color: #4087FF;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+
+    --primary-theme-color: #4087FF;
+    --dark-theme-color: #8CB7FF;
+    --grayer-theme-color: #28a745;
+    --browner-theme-color: #465B7F;
+    --datshirt-theme-color: #336CCC;
+}

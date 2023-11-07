@@ -66,7 +66,7 @@ export default {
         excluirDadosContato() {
             excluirContato(this.$route.params.id).then(res => {
                 console.log('res:::', res);
-                this.$router.push({ name: "home" });
+                this.$router.push({ name: "dashboard" });
             });
         }
     }

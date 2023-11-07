@@ -10,10 +10,21 @@
             Home
           </router-link>
         </li>
-        <li class="nav-item" id="criarContatoRoute">
-          <router-link :to="'/criarContato'" class="nav-link active">
+        <li class="nav-item">
+          <router-link :to="'/criarContato'" class="nav-link active" v-if="isAuthenticated" >
             Criar Contato
           </router-link>
+          <span v-else>
+            
+          </span>
+        </li>
+        <li class="nav-item">
+          <router-link :to="'/cadastro'" class="nav-link active" v-if="isAuthenticated && role === 'administrador'" >
+            Cadastrar Usuario
+          </router-link>
+          <span v-else>
+            
+          </span>
         </li>
       </ul>
       <ul class="navbar-nav mr-auto">
@@ -29,9 +40,9 @@
           <router-link :to="'/cadastro'" class="nav-link active" v-if="!isAuthenticated">
             Cadastrar-se
           </router-link>
-          <router-link :to="'/entrar'" class="nav-item pb-0" v-else>
+          <router-link :to="'/entrar'" class="nav-item pb-0" style="text-decoration: none;" v-else>
             <button class="nav-link btn"
-              @click="logout">
+              @click="Logout">
                 Sair
             </button>
           </router-link>
@@ -47,16 +58,16 @@
     data() {
       return {
         nomeDeUsuario: localStorage.getItem('nomeDeUsuario'),
+        role : localStorage.getItem('role'),
       };
     },
     computed: {
       isAuthenticated() {
-        // Verifique a existência do token JWT para determinar se o usuário está autenticado
         return !!localStorage.getItem('jwt');
       },
     },
     methods: {
-      logout() {
+      Logout() {
         localStorage.removeItem('jwt');
         localStorage.removeItem('nomeDeUsuario');
         localStorage.removeItem('email');
@@ -79,9 +90,6 @@
 
 <style>
   @media (max-width: 600px) {
-    #criarContatoRoute{
-      display: none;
-    }
     .navbar-nav {
       flex-direction: row;
       align-items: center;

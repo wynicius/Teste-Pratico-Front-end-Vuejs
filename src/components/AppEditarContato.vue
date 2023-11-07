@@ -72,7 +72,7 @@ export default {
             }
             editarContato(dadosContato).then(res => {
                 console.log('res:::', res);
-                this.$router.push({ name: "home" });
+                this.$router.push({ name: "dashboard" });
             });
         }
     }

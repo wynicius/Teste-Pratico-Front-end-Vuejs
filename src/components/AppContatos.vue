@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-5">
+  <div class="container">
     <div class="d-flex flex-column align-items-center" style="height: 100vh">
       <div class="container shadow border-0 mt-4 px-0">
         <div class="card-header bg-primary bg-gradient ml-0 py-3">
