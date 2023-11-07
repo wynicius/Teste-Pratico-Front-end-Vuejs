@@ -12,6 +12,7 @@ export async function listarContato(id) {
 
 export async function criarContato(contato) {
   try {
+    console.log(contato)
     const response = await axios.post('/api/criar', contato);
     return response.data;
   } catch (error) {

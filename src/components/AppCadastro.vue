@@ -1,80 +1,90 @@
 <template>
+    <AppHeader />
     <div class="container">
-        <div class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center pb-4">
             <div class="container shadow border-0 mt-4 mb-5 px-0">
                 <div class="card-header bg-primary bg-gradient ml-0 py-3">
                     <div class="col-12 text-center">
-                        <h2 class="text-white py-2">Cadastro de Usuário</h2>
+                        <h2 class="text-white py-2">Registre-se</h2>
                     </div>
                 </div>
                 <form class="p-4">
                     <div class="border p-3 mb-3">
-                        <div class="form-group col-md-12">
-                            <label>Nome: </label>
-                            <input
-                                type="text"
-                                class="form-control my-2"
-                                v-model="nome"
-                                name="nome"
-                                id="nome"
-                                minlength="3"
-                                maxlength="50"
-                                placeholder="Nome Completo"
-                            />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Email: </label>
-                            <input
-                                type="email"
-                                class="form-control my-2"
-                                v-model="email"
-                                name="email"
-                                id="email"
-                                placeholder="email@email.com"
-                            />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Senha: </label>
-                            <input
-                                type="password"
-                                class="form-control my-2"
-                                v-model="senha"
-                                name="senha"
-                                id="senha"
-                                minlength="6"
-                                maxlength="20"
-                                placeholder="Senha"
-                            />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Confirmar Senha: </label>
-                            <input
-                                type="password"
-                                class="form-control my-2"
-                                v-model="confirmarSenha"
-                                name="confirmarSenha"
-                                id="confirmarSenha"
-                                minlength="6"
-                                maxlength="20"
-                                placeholder="Confirmar Senha"
-                            />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Telefone: </label>
-                            <input
-                                type="text"
-                                class="form-control my-2"
-                                v-model="telefone"
-                                name="telefone"
-                                id="telefone"
-                                placeholder="Telefone"
-                                @input="validarTelefoneInput"
-                            />
+                        <div class="row">
+                            <div class="form-group col-lg-6 mb-3">
+                                <label>Nome: </label>
+                                <input
+                                    type="text"
+                                    class="form-control my-2"
+                                    v-model="nome"
+                                    name="nome"
+                                    id="nome"
+                                    minlength="3"
+                                    maxlength="50"
+                                    placeholder="Nome Completo"
+                                />
+                            </div>
+                            <div class="form-group col-lg-6 mb-3">
+                                <label>Email: </label>
+                                <input
+                                    type="email"
+                                    class="form-control my-2"
+                                    v-model="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="email@email.com"
+                                />
+                            </div>
+                            <div class="form-group col-lg-6 mb-3">
+                                <label>Telefone: </label>
+                                <input
+                                    type="text"
+                                    class="form-control my-2"
+                                    v-model="telefone"
+                                    name="telefone"
+                                    id="telefone"
+                                    placeholder="Telefone"
+                                    @input="validarTelefoneInput"
+                                />
+                            </div>
+                            <div class="form-group col-lg-6 mb-3">
+                                <label>Tipo de usuário: </label>
+                                <select v-model="role" class="form-select my-2">
+                                    <option value="administrador">Administrador</option>
+                                    <option value="usuario">Usuário</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-6 mb-3">
+                                <label>Senha: </label>
+                                <input
+                                    type="password"
+                                    class="form-control my-2"
+                                    v-model="senha"
+                                    name="senha"
+                                    id="senha"
+                                    minlength="6"
+                                    maxlength="20"
+                                    placeholder="Senha"
+                                />
+                            </div>
+                            <div class="form-group col-lg-6 mb-3">
+                                <label>Confirmar Senha: </label>
+                                <input
+                                    type="password"
+                                    class="form-control my-2"
+                                    v-model="confirmarSenha"
+                                    name="confirmarSenha"
+                                    id="confirmarSenha"
+                                    minlength="6"
+                                    maxlength="20"
+                                    placeholder="Confirmar Senha"
+                                />
+                            </div>
                         </div>
                     </div>
                     <button
                         type="button"
-                        @click="cadastrarUsuario()"
+                        @click="PreDadosCadastro()"
                         class="btn btn-success py-2"
                     >
                         Cadastrar
@@ -86,24 +96,30 @@
 </template>
 
 <script>
-// import { cadastrarUsuario } from "../services/UsuarioServices";
-// import { validarTelefone } from "../validations/validations.js";
+import { cadastrarUsuario } from "../services/UsuarioServices";
+import { validarTelefone } from "../validations/validations.js";
+
+import AppHeader from './AppHeader.vue'
 
 export default {
     name: "AppCadastro",
+    components: {
+        AppHeader,
+    },
     data() {
         return {
-            nome: "",
+            nomeDeUsuario: "",
             email: "",
             senha: "",
             confirmarSenha: "",
             telefone: "",
+            role: "",
         };
     },
     methods: {
-        // validarTelefoneInput() {
-        //     this.telefone = validarTelefone(this.telefone);
-        // },
+        validarTelefoneInput() {
+            this.telefone = validarTelefone(this.telefone);
+        },
         validarFormulario() {
             if (!this.nome || !this.email || !this.senha || !this.confirmarSenha || !this.telefone) {
                 alert("Por favor, preencha todos os campos.");
@@ -115,21 +131,23 @@ export default {
             }
             return true;
         },
-        // cadastrarUsuario() {
-        //     if (!this.validarFormulario()) {
-        //         return;
-        //     }
-        //     const dadosUsuario = {
-        //         nome: this.nome,
-        //         email: this.email,
-        //         senha: this.senha,
-        //         telefone: this.telefone,
-        //     };
-        //     cadastrarUsuario(dadosUsuario).then((res) => {
-        //         console.log("res:::", res);
-        //         this.$router.push({ name: "home" });
-        //     });
-        // },
+        PreDadosCadastro() {
+            if (!this.validarFormulario()) {
+                return;
+            }
+            const dadosUsuario = {
+                id: null,
+                nomeDeUsuario: this.nome,
+                email: this.email,
+                senha: this.senha,
+                telefone: this.telefone,
+                role: this.role,
+            };
+            cadastrarUsuario(dadosUsuario).then((res) => {
+                console.log("res:::", res);
+                this.$router.push({ name: "home" });
+            });
+        },
     },
 };
 </script>

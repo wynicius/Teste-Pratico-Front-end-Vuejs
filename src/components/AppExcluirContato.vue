@@ -1,4 +1,5 @@
 <template>
+    <AppHeader />
     <div class="excluir">
         <AppHeader />
         <div class="d-flex flex-column align-items-center" style="height: 100vh;">
@@ -35,9 +36,13 @@
 
 <script>
 import { listarContato, excluirContato } from '../services/AgendaServices'
+import AppHeader from './AppHeader.vue'
 
 export default {
     name: 'AppExcluirContato',
+    components: {
+        AppHeader,
+    },
     props: ['contato'],
     data() {
         return {

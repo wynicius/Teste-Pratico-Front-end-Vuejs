@@ -1,4 +1,5 @@
 <template>
+    <AppHeader />
     <div class="container">
         <div class="d-flex flex-column align-items-center">
             <div class="container shadow border-0 mt-4 mb-5 px-0">
@@ -36,7 +37,7 @@
                     </div>
                     <button
                         type="button"
-                        @click="dadosLogin()"
+                        @click="PreDadosLogin()"
                         class="btn btn-primary py-2"
                     >
                         Entrar
@@ -50,8 +51,13 @@
 <script>
 import { fazerLogin } from "../services/AuthServices";
 
+import AppHeader from './AppHeader.vue'
+
 export default {
     name: "AppEntrar",
+    components: {
+        AppHeader,
+    },
     data() {
         return {
             email: "",
@@ -59,14 +65,14 @@ export default {
         };
     },
     methods: {
-        dadosLogin() {
+        PreDadosLogin() {
           const dadosAcesso = {
             email: this.email,
             senha: this.senha,
           };
           fazerLogin(dadosAcesso).then((res) => {
             console.log("res:::", res);
-            this.$router.push({ name: "home" });
+            this.$router.push({ name: "dashboard" });
           });
         },
     },

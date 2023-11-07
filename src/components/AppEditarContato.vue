@@ -1,4 +1,5 @@
 <template>
+    <AppHeader />
     <div>
         <div class="d-flex flex-column align-items-center" style="">
             <div class="container shadow border-0 mt-4 px-0">
@@ -35,10 +36,13 @@
 
 <script>
 import { listarContato, editarContato } from '../services/AgendaServices'
+import AppHeader from './AppHeader.vue'
 
 export default {
     name: 'AppEditarContato',
-
+    components: {
+        AppHeader
+    },
     props: ['contato'],
     data() {
         return {

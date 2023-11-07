@@ -42,31 +42,39 @@
 </template>
 
 <script>
-export default {
-  name: 'AppHeader',
-  data() {
-    return {
-      nomeDeUsuario: localStorage.getItem('nomeDeUsuario') ?? "", // substitua por seu próprio valor
-    };
-  },
-  computed: {
-    isAuthenticated() {
-      // Verifique a existência do token JWT para determinar se o usuário está autenticado
-      return !!localStorage.getItem('jwt');
+  export default {
+    name: 'AppHeader',
+    data() {
+      return {
+        nomeDeUsuario: localStorage.getItem('nomeDeUsuario'),
+      };
     },
-  },
-  methods: {
-    logout() {
-      // Remova o token JWT do local storage
-      localStorage.removeItem('jwt');
-      localStorage.removeItem('nomeDeUsuario');
-      localStorage.removeItem('email');
-      // Redirecione o usuário para a página de login
-      this.$router.push('/entrar');
+    computed: {
+      isAuthenticated() {
+        // Verifique a existência do token JWT para determinar se o usuário está autenticado
+        return !!localStorage.getItem('jwt');
+      },
     },
-  },
-  
-};
+    methods: {
+      logout() {
+        localStorage.removeItem('jwt');
+        localStorage.removeItem('nomeDeUsuario');
+        localStorage.removeItem('email');
+
+        this.$router.push('/entrar');
+        this.checkAuth();
+      },
+      checkAuth() {
+        this.isAuthenticated = !!localStorage.getItem('jwt');
+      }
+    },
+    watch: {
+      '$route': 'checkAuth'
+    },
+    created() {
+      this.checkAuth();
+    },
+  };
 </script>
 
 <style>

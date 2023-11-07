@@ -1,7 +1,7 @@
 <template>
     <footer class="border-top footer bg-primary text-light fixed-bottom">
         <p class="container pt-2" style="text-align:center;">
-            &copy; 2023 - Agenda Blue | by Wynicius <i class="bi bi-heart-fill"></i>
+            &copy; 2023 - Agenda Blue | by Wynicius
         </p>
     </footer>
 </template>
