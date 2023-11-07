@@ -1,5 +1,4 @@
 <template>
-    <AppHeader />
     <div class="excluir">
         <AppHeader />
         <div class="d-flex flex-column align-items-center" style="height: 100vh;">

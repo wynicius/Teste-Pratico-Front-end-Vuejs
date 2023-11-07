@@ -55,18 +55,12 @@
                                 </select>
                             </div>
                             <div v-else class="form-group col-lg-6 mb-3">
-                                <label v-if="isAuthenticated && role === 'administrador'">
-                                        Tipo de usuário:
-                                </label>
-                                <div v-if="!isAuthenticated">
-                                    <label v-if="!isAuthenticated">
-                                        Tipo de usuário: 
-                                    </label>
-                                    <select v-model="role" class="form-select my-2" value="usuario">
-                                        <option>Usuário</option>
-                                    </select>
+                                <div v-if="!isAuthenticated && role === 'usuario'">
+                                    <label>Tipo de usuário:</label>
+                                    <input v-model="role" class="form-select my-2" disabled />
                                 </div>
                             </div>
+
                             <div class="form-group col-lg-6 mb-3">
                                 <label>Senha: </label>
                                 <input
@@ -77,7 +71,7 @@
                                     id="senha"
                                     minlength="6"
                                     maxlength="20"
-                                    placeholder="senha"
+                                    placeholder="no mínimo 8 caracteres, uma letra maiúscula, um número e um caracter especial"
                                 />
                             </div>
                             <div class="form-group col-lg-6 mb-3">
@@ -98,9 +92,8 @@
                     <button
                         type="button"
                         @click="PreDadosCadastro()"
-                        class="btn btn-success py-2"
-                    >
-                        Cadastrar
+                        class="btn btn-success py-2">
+                            Cadastrar
                     </button>
                 </form>
             </div>
@@ -126,7 +119,7 @@ export default {
             senha: "",
             confirmarSenha: "",
             telefone: "",
-            role: localStorage.getItem('role')
+            role: 'usuario'
         };
     },
     computed: {

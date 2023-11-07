@@ -64,7 +64,6 @@
 import { criarContato } from "../services/AgendaServices";
 import { validarTelefone } from "../validations/validations.js";
 import AppHeader from './AppHeader.vue'
-import { ToastPlugin } from 'vue-toasted';
 
 export default {
     name: "AppCriarContato",
@@ -77,9 +76,6 @@ export default {
             email: "",
             telefone: "",
         };
-    },
-    install(Vue) {
-        Vue.use(ToastPlugin);
     },
     methods: {
         validarTelefoneInput() {
@@ -94,7 +90,6 @@ export default {
             };
             criarContato(dadosContato).then((res) => {
                 console.log("res:::", res);
-                this.$toasted.success("Contato criado com sucesso!");
                 this.$router.push({ name: "dashboard" });
             });
         },
