@@ -8,36 +8,36 @@
           </div>
         </div>
         <div class="d-flex justify-content-center p-3">
-          <div type="button" speechify-initial-font-size="13px">
+          <div>
             <router-link :to="'/criarContato/'" class="btn btn-success">
               Criar novo contato
             </router-link>
           </div>
         </div>
       </div>
-      <table class="table table-bordered table-striped" speechify-initial-font-size="16px">
-        <thead speechify-initial-font-size="16px">
-          <tr speechify-initial-font-size="16px">
-            <th scope="col" speechify-initial-font-size="16px">Ordem</th>
-            <th scope="col" speechify-initial-font-size="16px">Nome Completo</th>
-            <th scope="col" speechify-initial-font-size="16px">Email</th>
-            <th scope="col" speechify-initial-font-size="16px">Telefone</th>
-            <th scope="col" speechify-initial-font-size="16px">Editar</th>
-            <th scope="col" speechify-initial-font-size="16px">Deletar</th>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Ordem</th>
+            <th scope="col">Nome Completo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Deletar</th>
           </tr>
         </thead>
-        <tbody speechify-initial-font-size="16px">
-          <tr v-for="(item, index) in contatos" :key="index" speechify-initial-font-size="16px">
-            <td speechify-initial-font-size="16px">{{ index + 1 }}</td>
-            <td speechify-initial-font-size="16px">{{ item.nome }}</td>
-            <td speechify-initial-font-size="16px">{{ item.email }}</td>
-            <td speechify-initial-font-size="16px">{{ item.telefone }}</td>
-            <td speechify-initial-font-size="16px">
+        <tbody>
+          <tr v-for="(item, index) in contatos" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ item.nome }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefone }}</td>
+            <td>
               <router-link :to="'/editarContato/' + item.id" class="btn btn-warning">
                 Editar
               </router-link>
             </td>
-            <td speechify-initial-font-size="16px">
+            <td>
               <router-link :to="'/excluirContato/' + item.id" class="btn btn-danger">
                 Excluir
               </router-link>
@@ -52,6 +52,6 @@
 <script>
 export default {
   name: 'AppContatos',
-  props: ['contatos'],
+  props: ['contatos']
 };
 </script>

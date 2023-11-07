@@ -6,7 +6,6 @@ export async function fazerLogin(dadosAcesso) {
 
     localStorage.setItem('jwt', response.data.token);
     localStorage.setItem('nomeDeUsuario', response.data.usuario.nomeDeUsuario);
-    localStorage.setItem('email', response.data.usuario.email);
     localStorage.setItem('role', response.data.usuario.role);
 
     return response.data;

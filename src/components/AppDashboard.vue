@@ -4,9 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="row">
-            <AppContatos v-if="contatos.length > 0" :contatos="contatos" />
-          </div>
+          <AppContatos v-if="contatos.length" :contatos="contatos" />
         </div>
       </div>
     </div>
@@ -30,14 +28,13 @@ export default {
       numeroDeContatos: 0
     }
   },
-  mounted() {
-    this.getContatos()
+  async mounted() {
+    await this.getContatos()
   },
   methods: {
     async getContatos() {
-      const contatos = await getTodosContatos()
-      this.contatos = contatos
-      this.numeroDeContatos = contatos.length
+      this.contatos = await getTodosContatos()
+      this.numeroDeContatos = this.contatos.length
     },
   }
 }
