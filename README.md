@@ -65,8 +65,10 @@ $ npm run serve
 ## Cadastro de Usuários
 ![cadastroUsuarios](https://raw.githubusercontent.com/wynicius/pictures/main/cadastroUsuario.jpg)
 
+## Com o usuário logado você conseguirá visualizar a agenda de contatos, sendo direcionado à dashboard
+
 ### Para listar todos os contato basta abrir a aplicação em http://localhost:8080.
-![Home](https://raw.githubusercontent.com/wynicius/pictures/main/Home.jpg)
+![Home](https://raw.githubusercontent.com/wynicius/pictures/main/Dashboard.jpg)
 
 ### Para cadastrar um contato, execute os seguintes passos:
 
@@ -86,9 +88,9 @@ $ npm run serve
 
 ### Para excluir um contato, execute os seguintes passos:
 
-Abra o navegador e acesse a aplicação em http://localhost:8080.
-Clique no botão "Excluir" ao lado do contato que deseja excluir.
-Clique no botão "Confirmar".
+ - Abra o navegador e acesse a aplicação em http://localhost:8080.
+ - Clique no botão "Excluir" ao lado do contato que deseja excluir.
+ - Clique no botão "Confirmar".
 ![excluirContato](https://raw.githubusercontent.com/wynicius/pictures/main/Excluir%20Contato.jpg)
 
 # [Conheça o Back-end do projeto clicando aqui](https://github.com/wynicius/Teste-Pratico-Back-end-DotNet)
