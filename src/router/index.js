@@ -67,7 +67,7 @@ const routes = [
     path: "/criarContato",
     name: "criarContato",
     component: AppCriarContato,
-    beforeEnter: (next) => {
+    beforeEnter: (to, from, next) => {
       const isAuthenticated = !!localStorage.getItem('jwt');
 
       if (isAuthenticated) {
@@ -81,7 +81,7 @@ const routes = [
     path: "/cadastro",
     name: "cadastro",
     component: AppCadastro,
-      beforeEnter: (next) => {
+      beforeEnter: (to, from, next) => {
         const isAuthenticated = !!localStorage.getItem('jwt');
         if (isAuthenticated) {
           next();
