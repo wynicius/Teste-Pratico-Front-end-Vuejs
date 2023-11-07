@@ -35,9 +35,13 @@
 
 <script>
 import { listarContato, excluirContato } from '../services/AgendaServices'
+import AppHeader from './AppHeader.vue'
 
 export default {
     name: 'AppExcluirContato',
+    components: {
+        AppHeader,
+    },
     props: ['contato'],
     data() {
         return {
@@ -61,7 +65,7 @@ export default {
         excluirDadosContato() {
             excluirContato(this.$route.params.id).then(res => {
                 console.log('res:::', res);
-                this.$router.push({ name: "home" });
+                this.$router.push({ name: "dashboard" });
             });
         }
     }

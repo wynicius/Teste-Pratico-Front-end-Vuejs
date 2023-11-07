@@ -1,4 +1,5 @@
 <template>
+    <AppHeader />
     <div class="container">
         <div class="d-flex flex-column align-items-center">
             <div class="container shadow border-0 mt-4 px-0">
@@ -62,9 +63,13 @@
 <script>
 import { criarContato } from "../services/AgendaServices";
 import { validarTelefone } from "../validations/validations.js";
+import AppHeader from './AppHeader.vue'
 
 export default {
     name: "AppCriarContato",
+    components: {
+        AppHeader,
+    },
     data() {
         return {
             nome: "",
@@ -85,7 +90,7 @@ export default {
             };
             criarContato(dadosContato).then((res) => {
                 console.log("res:::", res);
-                this.$router.push({ name: "home" });
+                this.$router.push({ name: "dashboard" });
             });
         },
     },

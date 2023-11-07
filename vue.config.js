@@ -1,7 +1,7 @@
-const { defineConfig } = require('@vue/cli-service');
+{import('@vue/cli-service').ProjectOptions}
 
-module.exports = defineConfig({
-  transpileDependencies: true,
+module.exports = {
+  transpileDependencies: [],
   devServer: {
     proxy: {
       '^/api': {
@@ -10,4 +10,4 @@ module.exports = defineConfig({
       }
     }
   }
-});
+}
