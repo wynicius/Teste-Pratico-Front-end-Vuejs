@@ -1,20 +1,20 @@
 <template>
-  <div class="container">
+  <main class="container">
     <div class="d-flex flex-column align-items-center" style="height: 100vh">
-      <div class="container shadow border-0 mt-4 px-0">
-        <div class="card-header bg-primary bg-gradient ml-0 py-3">
-          <div class="col-12 text-center">
+      <section class="container shadow border-0 mt-4 px-0">
+        <section class="card-header bg-primary bg-gradient ml-0 py-3">
+          <aside class="col-12 text-center">
             <h2 class="text-white py-2">Agenda de Contatos</h2>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center p-3">
-          <div>
-            <router-link :to="'/criarContato/'" class="btn btn-success">
+          </aside>
+        </section>
+        <section class="d-flex justify-content-center p-3">
+          <aside>
+            <router-link :to="'/criarContato/'" class="btn btn-success py-2 px-5">
               Criar novo contato
             </router-link>
-          </div>
-        </div>
-      </div>
+          </aside>
+        </section>
+      </section>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -46,7 +46,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

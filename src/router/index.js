@@ -10,7 +10,15 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: AppEntrar
+    component: AppEntrar,
+    beforeEnter: (to, from, next,) => {
+      const isAuthenticated = !!localStorage.getItem('jwt');
+      if (!isAuthenticated) {
+        next();
+      } else {
+        next('/dashboard');
+      }
+    },
   },
   {
     path: '/dashboard',
@@ -81,19 +89,27 @@ const routes = [
     path: "/cadastro",
     name: "cadastro",
     component: AppCadastro,
-      beforeEnter: (to, from, next) => {
+      beforeEnter: (to, from, next,) => {
         const isAuthenticated = !!localStorage.getItem('jwt');
-        if (isAuthenticated) {
+        if (!isAuthenticated || localStorage.getItem('role') == 'administrador') {
           next();
         } else {
-          next('/entrar');
+          next('/dashboard');
         }
     },
   },
   {
     path: "/entrar",
     name: "entrar",
-    component: AppEntrar
+    component: AppEntrar,
+    beforeEnter: (to, from, next,) => {
+      const isAuthenticated = !!localStorage.getItem('jwt');
+      if (!isAuthenticated) {
+        next();
+      } else {
+        next('/dashboard');
+      }
+    },
   }
 ]
 

@@ -1,6 +1,6 @@
 <template>
     <AppHeader />
-    <div>
+    <main>
         <div class="d-flex flex-column align-items-center" style="">
             <div class="container shadow border-0 mt-4 px-0">
                 <div class="card-header bg-primary bg-gradient ml-0 py-3">
@@ -13,25 +13,55 @@
                 <form class="p-4">
                     <div class="border p-3 mb-3">
                         <div class="form-group col-md-12">
-                            <label for="nome">Nome: </label>
-                            <input type="text" class="form-control my-2" v-model="nome" name="nome" id="nome" placeholder="Nome Completo" />
+                            <label class="form-control border-0">
+                                Nome:
+                                <input 
+                                    type="text" 
+                                    class="form-control my-2" 
+                                    v-model="nome" 
+                                    name="nome" 
+                                    id="nome" 
+                                    placeholder="Nome Completo"
+                                />
+                            </label>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="email">Email: </label>
-                            <input type="email" class="form-control my-2" v-model="email" name="email" id="email" placeholder="E-mail" />
+                            <label class="form-control border-0"> 
+                                Email: 
+                                <input 
+                                    type="email" 
+                                    class="form-control my-2" 
+                                    v-model="email" 
+                                    name="email" 
+                                    id="email" 
+                                    placeholder="E-mail" 
+                                />
+                            </label>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="telefone">Telefone: </label>
-                            <input type="tel" class="form-control my-2" v-model="telefone" name="telefone" id="telefone" placeholder="Telefone" />
+                            <label class="form-control border-0">
+                                Telefone: 
+                                <input 
+                                    type="tel" 
+                                    class="form-control my-2" 
+                                    v-model="telefone" 
+                                    name="telefone" 
+                                    id="telefone" 
+                                    placeholder="Telefone" 
+                                />
+                            </label>
                         </div>
                     </div>
-                    <button type="button" @click="atualizarDadosContato()" class="btn btn-warning py-2">
+                    <button 
+                        type="submit" 
+                        class="btn btn-primary py-2 px-5"
+                        @click="atualizarDadosContato()">
                         Salvar Alterações
                     </button>
                 </form>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>

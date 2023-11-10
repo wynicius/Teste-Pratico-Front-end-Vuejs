@@ -1,18 +1,17 @@
 <template>
     <AppHeader />
-    <div class="container">
+    <main>
         <div class="d-flex flex-column align-items-center pb-4">
             <div class="container shadow border-0 mt-4 mb-5 px-0">
-                <div class="card-header bg-primary bg-gradient ml-0 py-3">
-                    <div class="col-12 text-center">
+                <aside class="card-header bg-primary bg-gradient ml-0 py-3">
+                    <aside class="col-12 text-center">
                         <h2 class="text-white py-2">Registre-se</h2>
-                    </div>
-                </div>
+                    </aside>
+                </aside>
                 <form class="p-4">
-                    <div class="border p-3 pb-0 mb-2">
-                        <div class="row">
-                            <div class="form-group col-lg-6 mb-3">
-                                <label>Nome: </label>
+                    <section class="container d-flex border p-3 pb-0 mb-3">
+                        <section class="container form-group col-lg-6 mb-3">
+                            <label class="form-control border-0">Nome: 
                                 <input
                                     type="text"
                                     class="form-control my-2"
@@ -23,9 +22,8 @@
                                     maxlength="50"
                                     placeholder="nome de usuário"
                                 />
-                            </div>
-                            <div class="form-group col-lg-6 mb-3">
-                                <label>Email: </label>
+                            </label>
+                            <label class="form-control border-0">Email: 
                                 <input
                                     type="email"
                                     class="form-control my-2"
@@ -34,9 +32,8 @@
                                     id="email"
                                     placeholder="email@email.com"
                                 />
-                            </div>
-                            <div class="form-group col-lg-6 mb-3">
-                                <label>Telefone: </label>
+                            </label>
+                            <label class="form-control border-0">Telefone: 
                                 <input
                                     type="text"
                                     class="form-control my-2"
@@ -46,9 +43,10 @@
                                     placeholder="telefone"
                                     @input="validarTelefoneInput"
                                 />
-                            </div>
-                            <div  class="form-group col-lg-6 mb-3">
-                                <label>Tipo de usuário: </label>
+                            </label>
+                        </section>
+                        <section class="container form-group col-lg-6 mb-3">
+                            <label class="form-control border-0">Tipo de usuário:
                                 <select v-model="role" class="form-select my-2">
                                     <option 
                                     v-if="isAuthenticated && role === 'administrador'" 
@@ -57,10 +55,8 @@
                                     </option>
                                     <option value="usuario">Usuário</option>
                                 </select>
-                            </div>
-        
-                            <div class="form-group col-lg-6 mb-3">
-                                <label>Senha: </label>
+                            </label>
+                            <label class="form-control border-0">Senha: 
                                 <input
                                     type="password"
                                     class="form-control my-2"
@@ -71,9 +67,8 @@
                                     maxlength="20"
                                     placeholder="no mínimo 8 caracteres, uma letra maiúscula, um número e um caracter especial"
                                 />
-                            </div>
-                            <div class="form-group col-lg-6 mb-3">
-                                <label>Confirmar Senha: </label>
+                            </label>
+                            <label class="form-control border-0">Confirmar Senha: 
                                 <input
                                     type="password"
                                     class="form-control my-2"
@@ -84,19 +79,19 @@
                                     maxlength="20"
                                     placeholder="confirmar senha"
                                 />
-                            </div>
-                        </div>
-                    </div>
+                            </label>
+                        </section>
+                    </section>
                     <button
-                        type="button"
-                        @click="PreDadosCadastro()"
-                        class="btn btn-success py-2">
-                            Cadastrar
+                        class="btn btn-success py-2 px-5"
+                        type="submit"
+                        @click="PreDadosCadastro()">
+                        Cadastrar
                     </button>
                 </form>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>

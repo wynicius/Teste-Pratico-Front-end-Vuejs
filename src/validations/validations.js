@@ -5,3 +5,4 @@ export function validarTelefone(telefone) {
     }
     return telefone;
 }
+

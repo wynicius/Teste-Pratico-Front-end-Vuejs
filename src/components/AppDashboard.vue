@@ -1,13 +1,13 @@
 <template>
   <main>
     <AppHeader />
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+    <main class="container">
+      <section class="row">
+        <article class="col-md-12">
           <AppContatos v-if="contatos.length" :contatos="contatos" />
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
   </main>
 </template>
 

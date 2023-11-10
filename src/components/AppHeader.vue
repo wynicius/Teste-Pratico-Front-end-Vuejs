@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" speechify-initial-font-size="16px">
     <div class="container-fluid" >
-      <router-link :to="'/'" class="navbar-brand" speechify-initial-font-size="20px">
+      <router-link v-if="!isAuthenticated" :to="'/'" class="navbar-brand" speechify-initial-font-size="20px">
         <img src="../assets/blue.png" alt="Logo da Agenda Blue" height="30">
       </router-link>
       <ul class="navbar-nav me-auto" >
@@ -22,9 +22,7 @@
           <router-link :to="'/cadastro'" class="nav-link active" v-if="isAuthenticated && role === 'administrador'" >
             Cadastrar Usuario
           </router-link>
-          <span v-else>
-            
-          </span>
+          <span v-else> </span>
         </li>
       </ul>
       <ul class="navbar-nav mr-auto">
@@ -32,9 +30,9 @@
           <router-link :to="'/entrar'" class="nav-link active" v-if="!isAuthenticated" >
             Entrar
           </router-link>
-          <span class="nav-link pb-0" v-else>
+          <button class="nav-link pb-0" v-else>
             {{ nomeDeUsuario }}
-          </span>
+          </button>
         </li>
         <li class="nav-item" id="m-cadastro" >
           <router-link :to="'/cadastro'" class="nav-link active" v-if="!isAuthenticated">
